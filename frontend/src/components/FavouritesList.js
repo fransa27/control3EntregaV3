@@ -5,7 +5,7 @@ import styled from "styled-components";
 function VistaFavoritos (props){
         
     return(
-        <div>
+/*         <div>
             <ul >
                 {
                 props.newList.map((newListElement, index) => (
@@ -35,7 +35,36 @@ function VistaFavoritos (props){
             
                 }
             </ul>
+        </div> */
+
+        <div>
+            <OverlayTrigger placement="bottom" trigger="click" overlay={(
+                <ul>
+                    {
+                        props.newList.map((newListElement, index) => (
+                            <div key={index}>
+                                <Contenedor>
+                                    <Popover id="popover-basic">
+                                    <PopoverBody>
+                                        <div>
+                                            <h6>{newListElement.title} </h6>
+                                        </div>
+                                    </PopoverBody>  
+                                
+                                    </Popover>
+                                </Contenedor>
+                            </div>
+                        ))
+                    }
+                </ul>
+
+            )}>
+            <Button variant="success">
+                Ver Noticias Favoritas
+            </Button>
+            </OverlayTrigger>
         </div>
+
     )
 
 }
