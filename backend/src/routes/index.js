@@ -1,13 +1,12 @@
 const Router = require('koa-router')
+//const companies = require('./Company/company.route')
 const news = require('./News/news.route')
-
 const router = new Router()
-
-router.get('/news', news.getAllNews)
-router.get('/news/:id', news.getAllNewComplete)
-router.get('/favorites', news.getAllFavoritesNews)
-router.post('/favorites/:id', news.updateFavs)
-//router.post('/news/favorites', companies.searchByNameOrLocation)
-//router.get('/companies/byptype/:paymentType/:order', news.searchByPaymentType)
-
+/*
+router.get('/companies', companies.getAllCompanies)
+router.post('/companies', companies.searchByNameOrLocation)
+router.get('/companies/byptype/:paymentType/:order', companies.searchByPaymentType)
+*/
+router.get('/news', news.getAllShortNew)
+router.get('/news/:id', news.getAllNew)
 module.exports = router

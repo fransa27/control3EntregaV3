@@ -1,37 +1,40 @@
 import React, { Children } from "react";
 import styled from "styled-components";
-import InfoPanel from "../layout/VerTodasNoticias";
-import {Button, Row, Col, Container} from "react-bootstrap"
+import {Button,Row, Col, Container} from "react-bootstrap"
+import {useState} from 'react'
+import a from "../layout/layout"
 
-function CompleteNew  ({children, estado, cambiarEstado, props }) {
+
+function CompleteNew ({children, estado, cambiarEstado,props})  {
+    
+    
     return (
         <>
             {estado &&
                 <Overlay>
                     <Contenedor>
-                        <Encabezado>
-                        </Encabezado>
-                        <ul >
-                            {
-                            props.newList((newListElement) => (
-                                <div className="row">
+                        <Encabezado></Encabezado>
+                        <div>
+                            <section id = "CompleteNew">
+                                <Container>
                                     <Row>
-                                        <Col> <h2>{newListElement.title}</h2></Col>
-                                        <Col> <h5>{newListElement.date}</h5></Col>
-                                        <Col> <h4>{newListElement.longDescription}</h4></Col>
+                                        <Col>
+                                        <h1> abc </h1>
+                                        </Col>
                                     </Row>
-                                </div>
-                            ))
-                        
-                            }
-                        </ul>
-                        <BotonCerrar onClick={() => cambiarEstado(false)}>X</BotonCerrar>
-                        
+                                </Container>
+                            </section>
+
                             
+                            
+                        </div>
+
+                        <Button onClick={() => cambiarEstado(false)}>X</Button>
 
                         {children}
 
-                    </Contenedor> 
+                    </Contenedor>
+                    
                 </Overlay>
             }
             
@@ -153,3 +156,24 @@ export default NewCompletes*/
                             }
                         </ul>
 */
+
+/*
+<section id="noticiacompleta">
+                            <Container>
+                                <Row>
+                                    <div className="col-12 text-left">
+                                        <ul className="arrow-styled">
+                                            {
+                                                props.Newss.map((noticia, index) => (
+                                                    <div key={index} className='row'>
+                                                        <h1>{noticia.news.title}</h1>
+                                                    </div>
+                                                ))
+                                            }
+
+                                        </ul>
+
+                                    </div>
+                                </Row>
+                            </Container>
+                        </section> */
