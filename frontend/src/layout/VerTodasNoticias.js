@@ -25,6 +25,8 @@ function VerTodasNoticias (){
     const deleteNews_from_favorites = (newsss) => {
         store.dispatch({ type: 'DELETE', newsss })
     }
+
+    //NUEVA FUNCIÓN NO REDUCER
     const probando_funcion =(newsss)=>{
         Favs(newsss,'ADD')
     }

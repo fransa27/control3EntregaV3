@@ -1,6 +1,8 @@
 import { faCircleDollarToSlot } from "@fortawesome/free-solid-svg-icons"
 import axios from "axios"
+import { useState} from "react"
 function Favs (dato,senal) {
+    
     switch (senal) {
         case 'ADD':
                 //alert(`NUEVO FAVORITO AGREGADO: ${dato.newsss.title}`)
@@ -8,9 +10,10 @@ function Favs (dato,senal) {
                 axios.post(`http://localhost:4000/favorites/${dato._id}`)
                 const result_2 = axios.get("http://localhost:4000/favorites")
                 
+                
 
                
-                console.log("result 2 hola: ",result_2.data)
+                console.log("result 2 hola:(revisar postman) ",result_2.data)
                 
             //aaaa
         
