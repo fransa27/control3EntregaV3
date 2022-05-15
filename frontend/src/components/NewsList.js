@@ -1,9 +1,11 @@
-import {  Container, Row, Col, Button } from "react-bootstrap"
+import {  Container, Row, Col, Button, Popover, PopoverBody } from "react-bootstrap"
 import { useState, useEffect } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faStar, faStarHalf} from '@fortawesome/free-solid-svg-icons';
 import {faStarHalfStroke} from '@fortawesome/free-regular-svg-icons';
 import VerNoticia from "../layout/VerNoticia";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+//import Popover from 'react-bootstrap/Popover'
 
 function NewsList (props) {
     var store=props.lista
@@ -14,14 +16,6 @@ function NewsList (props) {
         
         console.log("STORE: ", store.getState())
     })
-    //console.log("store: ",store.getState())
-    //store.getState().includes(newsss)//aaaaa
-    
-    
-    /*useEffect(()=>{
-        console.log("useEffect ",store.getState())
-        
-    }, [store.getState()])*/
 
     return (
         <section id='newsList'>
@@ -41,7 +35,26 @@ function NewsList (props) {
                                             <Col><h3>{newsss.title}</h3></Col>
                                             <Col><h6>{newsss.shortDescription}</h6></Col>
                                             
-                                            <Button variant="danger" size="sm" onClick={()=>VerNoticia(newsss._id)}>Ver noticia</Button>
+
+                                            <OverlayTrigger
+                                                placement="bottom"
+                                                trigger="click"
+                                                overlay={(
+                                                <Popover id="popover-basic">
+                                                    <PopoverBody>
+                                                        <div>
+                                                            <h6>{newsss.longDescription} </h6>
+                                                        </div>
+                                                    </PopoverBody>  
+                                                    
+                                                </Popover>
+                                                )}>
+                                                <Button variant="success">
+                                                    Ver Noticia
+                                                </Button>
+                                            </OverlayTrigger>
+
+                                            {/* <Button variant="danger" size="sm" onClick={()=>VerNoticia(newsss._id)}>Ver noticia</Button> */}
                                             <Col> <FontAwesomeIcon
                                                                                     
                                             onClick={() => {

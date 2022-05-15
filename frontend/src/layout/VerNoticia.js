@@ -15,7 +15,7 @@ function VerNoticia (id){
     console.log("en ver noticia layout")
     const [loaded, setDataLoaded] = useState(false)
     console.log("despues del loaded")
-    const [noticia, setNew] = useState(false)
+    const [noticia, setNew] = useState([])
     console.log("despues del n")
 
     const [Estado, cambiarEstado] = useState(true);
@@ -24,7 +24,7 @@ function VerNoticia (id){
         const fetchData = async () =>{
             if(!loaded){
                 console.log("antes del get")
-                const result = await axios.get('http://localhost:4000/news/${id}')
+                const result = await axios.get("http://localhost:4000/news/?${id}")
                 console.log("despues del get")
 
                 if(result.data){

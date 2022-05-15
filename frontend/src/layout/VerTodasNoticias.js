@@ -10,7 +10,7 @@ const store = createStore(newsReducer)
 function VerTodasNoticias (){
 
     const [loaded, setDataLoaded] = useState(false)
-    const [companiesData, setComaniesData]=useState([])
+    const [noticiasData, setNoticiasData]=useState([])
 
     const addNews_to_favorites = (newsss) => {
         store.dispatch({ type: 'ADD', newsss })
@@ -29,7 +29,7 @@ function VerTodasNoticias (){
                 const result = await axios.get('http://localhost:4000/news')
                 if(result.data){
                     setDataLoaded(true)
-                    setComaniesData(result.data)
+                    setNoticiasData(result.data)
                     //console.log(result.data)
                 }
                 
@@ -52,8 +52,8 @@ function VerTodasNoticias (){
     
         return (            
             <div className="App">                
-                <NewsList newssss={companiesData} onAdd={addNews_to_favorites} onDelete={deleteNews_from_favorites} lista = {store}  />            
-                </div>            
+                <NewsList newssss={noticiasData} onAdd={addNews_to_favorites} onDelete={deleteNews_from_favorites} lista = {store}  />            
+            </div>            
         )
 
 }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
-import FavouriteList from "../components/FavouritesList"
+import VistaFavoritos from "../components/FavouritesList"
 import { createStore } from "redux"
 import newsReducer from "../reducer/reducer"
 
@@ -10,7 +10,7 @@ const store = createStore(newsReducer)
 function FavouriteList (){
 
     const [loaded, setDataLoaded] = useState(false)
-    const [newsFavourites, setNewsFavourites] = useState(false)
+    const [newsFavourites, setNewsFavourites] = useState([])
     useEffect(()=>{
         const fetchData = async () =>{
             if(!loaded){
@@ -27,7 +27,7 @@ function FavouriteList (){
       
     return (
         <div className="App">
-            <FavouriteList newList={newsFavourites} />
+            <VistaFavoritos newList={newsFavourites} />
         </div>
     )
 }

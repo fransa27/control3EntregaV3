@@ -1,6 +1,6 @@
 import { Row, Col } from "react-bootstrap"
 
-function FavouriteList (props){
+function VistaFavoritos (props){
         
     return(
         <div>
@@ -21,4 +21,4 @@ function FavouriteList (props){
     )
 
 }
-export default FavouriteList
+export default VistaFavoritos
