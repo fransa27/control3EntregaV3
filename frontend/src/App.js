@@ -14,7 +14,7 @@ export default function App() {
         <Route path="/favoritos" component={Favourite} />
       </Router> */}
 
-        <Button>Ver noticias favoritas</Button>
+        <FavouriteList></FavouriteList>
         
         <VerTodasNoticias></VerTodasNoticias>
         
