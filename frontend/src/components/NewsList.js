@@ -1,4 +1,4 @@
-import {  Container, Row, Col, Button, Popover, PopoverBody } from "react-bootstrap"
+import {  Container, Row, Col, Popover, PopoverBody } from "react-bootstrap"
 import { useState} from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faStar} from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +15,7 @@ function NewsList (props) {
         
         console.log("STORE: ", store.getState())
     })
-
+    const [mensaje, setMensaje]=useState("")
     
 
     return (
@@ -27,6 +27,7 @@ function NewsList (props) {
                             {
                                                                 
                                 props.newssss.map((newsss, index) => (
+                                    
                                     <div key={index} className='row'>
                                         <Row>
                                         <Row>
@@ -35,7 +36,7 @@ function NewsList (props) {
                                         <Row>
                                             <Col><h3>{newsss.title}</h3></Col>
                                             <Col><h6>{newsss.shortDescription}</h6></Col>
-                                            
+                                            <Col><p>{mensaje}</p></Col>
 
                                             <OverlayTrigger
                                                 placement="bottom"
@@ -68,12 +69,14 @@ function NewsList (props) {
                                                     alert(`FAVORITO ELIMINADO: ${newsss.title}`)   
                                                     //props.onDelete(newsss)
                                                     props.onPrueba(newsss)
+                                                    setMensaje("Agrega esta noticia a favorito")
                                                     
                                                 }else{
                                                     setEstrella(faStar)
                                                     alert(`NUEVO FAVORITO AGREGADO: ${newsss.title}`)
                                                     //props.onAdd(newsss)
                                                     props.onPrueba(newsss)
+                                                    setMensaje("noticia en favorito")
 
                                                 }
                                                 window.location.reload()
@@ -85,6 +88,17 @@ function NewsList (props) {
                                             
                                             
                                             /></Col>
+                                            {/* <Col>   
+                                                { ()=> {
+                                                    if (newsss.favorite === "1") {
+                                                        setMensaje("noticia en favorito")
+                                                    }else{
+                                                        setMensaje("Agrega esta noticia a favorito")
+                                                    }
+                                                }
+                                            } <p>{mensaje}</p>
+                                            </Col> */}
+                                        <div>{mensaje}</div>
                                         <div>________________________________________________________________</div>
                                         </Row>
                                         </Row>
@@ -117,4 +131,12 @@ const Contenedor = styled.div`
     border-radius: 5px;
     box-shadow:rgba(100,100,111,0.2) 0px 7px 29px 0px;
     padding:20px;
+`;
+const Button = styled.button`
+  background-color: pink;
+  border: 2px solid pink;
+  border-radius: 5px;
+  color: black;
+  padding: 10px;
+  box-shadow: 5px 5px 5px 0px lightgray;
 `;

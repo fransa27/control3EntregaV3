@@ -1,5 +1,5 @@
 import { Popover, PopoverBody } from "react-bootstrap"
-import Button from 'react-bootstrap/Button'
+//import Button from 'react-bootstrap/Button'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import styled from "styled-components";
 
@@ -29,7 +29,7 @@ function VistaFavoritos (props){
                 </ul>
 
             )}>
-            <Button variant="success" size="lg">
+            <Button variant="success" >
                 Ver Noticias Favoritas
             </Button>
             </OverlayTrigger>
@@ -48,4 +48,13 @@ const Contenedor = styled.div`
     border-radius: 5px;
     box-shadow:rgba(100,100,111,0.2) 0px 7px 29px 0px;
     padding:20px;
+`;
+
+const Button = styled.button`
+    size=lg;
+    background-color: lightblue;  
+    border-radius: 5px;
+    color: black;
+    padding: 10px;
+    box-shadow: 5px 5px 5px 0px lightgray;
 `;
