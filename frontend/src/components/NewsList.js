@@ -5,6 +5,7 @@ import {faStar, faStarHalf} from '@fortawesome/free-solid-svg-icons';
 import {faStarHalfStroke} from '@fortawesome/free-regular-svg-icons';
 import VerNoticia from "../layout/VerNoticia";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import styled from "styled-components";
 //import Popover from 'react-bootstrap/Popover'
 
 function NewsList (props) {
@@ -40,14 +41,17 @@ function NewsList (props) {
                                                 placement="bottom"
                                                 trigger="click"
                                                 overlay={(
-                                                <Popover id="popover-basic">
-                                                    <PopoverBody>
-                                                        <div>
-                                                            <h6>{newsss.longDescription} </h6>
-                                                        </div>
-                                                    </PopoverBody>  
+                                                    <Contenedor>
+                                                        <Popover id="popover-basic">
+                                                        <PopoverBody>
+                                                            <div>
+                                                                <h6>{newsss.longDescription} </h6>
+                                                            </div>
+                                                        </PopoverBody>  
                                                     
-                                                </Popover>
+                                                        </Popover>
+                                                    </Contenedor>
+                                                
                                                 )}>
                                                 <Button variant="success">
                                                     Ver Noticia
@@ -99,3 +103,27 @@ function NewsList (props) {
 }
 
 export default NewsList
+
+
+const Overlay = styled.div`
+    width:100vw;
+    heigth:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    background: rgba(0,0,0,.5);
+    padding: 40px;
+    display: flex;
+    alingn-items: center;
+    justify-content:center;
+
+`;
+const Contenedor = styled.div`
+    width:500px;
+    min-heigth:100px;
+    background: #fff;
+    position: relative;
+    border-radius: 5px;
+    box-shadow:rgba(100,100,111,0.2) 0px 7px 29px 0px;
+    padding:20px;
+`;
