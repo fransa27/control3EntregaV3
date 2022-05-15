@@ -12,7 +12,7 @@ function NewsList (props) {
     const [estrella, setEstrella] = useState(faStarHalfStroke)
     store.subscribe(() => {
         
-        console.log("STORE: ", store.getState())
+        //console.log("STORE: ", store.getState())
     })
     //console.log("store: ",store.getState())
     //store.getState().includes(newsss)//aaaaa
@@ -45,14 +45,16 @@ function NewsList (props) {
                                             <Col> <FontAwesomeIcon
                                                                                     
                                             onClick={() => {
-                                                
+                                                 
                                                 if(store.getState().includes(newsss) === true){
                                                     setEstrella(faStarHalfStroke)   
-                                                    props.onDelete(newsss)
+                                                    //props.onDelete(newsss)
+                                                    props.onPrueba(newsss)
                                                 }else{
                                                     setEstrella(faStar)
-                                                    props.onAdd(newsss)
-                                                }
+                                                    //props.onAdd(newsss)
+                                                    props.onPrueba(newsss)
+                                                } 
                                                 //store.getState().includes(newsss) === true ? setEstrella(faStar) : setEstrella(faStarHalfStroke)
                                                 //store.getState().includes(newsss) === true ? props.onDelete(newsss) : props.onAdd(newsss)
                                                 //props.onAdd(newsss)
@@ -64,7 +66,7 @@ function NewsList (props) {
                                             
                                             
                                             /></Col>
-
+                                            <h1>__________________________________________________________________________________________________________________________________</h1>
                                         </Row>
                                         </Row>
                                         </Row>

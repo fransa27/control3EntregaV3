@@ -24,7 +24,7 @@ function VerNoticia (id){
         const fetchData = async () =>{
             if(!loaded){
                 console.log("antes del get")
-                const result = await axios.get('http://localhost:4000/news/${id}')
+                const result = await axios.get("http://localhost:4000/news/${id}")
                 console.log("despues del get")
 
                 if(result.data){
