@@ -5,38 +5,6 @@ import styled from "styled-components";
 function VistaFavoritos (props){
         
     return(
-/*         <div>
-            <ul >
-                {
-                props.newList.map((newListElement, index) => (
-                    <div key={index}>
-                        <OverlayTrigger
-                            placement="bottom"
-                            trigger="click"
-                            overlay={(
-                                <Contenedor>
-                                    <Popover id="popover-basic">
-                                    <PopoverBody>
-                                        <div>
-                                            <h6>{newListElement.title} </h6>
-                                        </div>
-                                    </PopoverBody>  
-                                
-                                    </Popover>
-                                </Contenedor>
-                            
-                            )}>
-                            <Button variant="success">
-                                Ver Favouritos
-                            </Button>
-                        </OverlayTrigger>
-                    </div>
-                ))
-            
-                }
-            </ul>
-        </div> */
-
         <div>
             <OverlayTrigger placement="bottom" trigger="click" overlay={(
                 <ul>
@@ -70,20 +38,6 @@ function VistaFavoritos (props){
 }
 export default VistaFavoritos
 
-
-const Overlay = styled.div`
-    width:100vw;
-    heigth:100vh;
-    position:fixed;
-    top:0;
-    left:0;
-    background: rgba(0,0,0,.5);
-    padding: 40px;
-    display: flex;
-    alingn-items: center;
-    justify-content:center;
-
-`;
 const Contenedor = styled.div`
     width:500px;
     min-heigth:100px;

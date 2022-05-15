@@ -18,6 +18,8 @@ function NewsList (props) {
         console.log("STORE: ", store.getState())
     })
 
+    
+
     return (
         <section id='newsList'>
             <Container>
@@ -63,12 +65,15 @@ function NewsList (props) {
                                                                                     
                                             onClick={() => {
                                                 
-                                                if(store.getState().includes(newsss) === true){
+                                                if(newsss.favorite === "1"){
                                                     setEstrella(faStarHalfStroke)   
-                                                    props.onDelete(newsss)
+                                                    //props.onDelete(newsss)
+                                                    props.onPrueba(newsss)
                                                 }else{
                                                     setEstrella(faStar)
-                                                    props.onAdd(newsss)
+                                                    //props.onAdd(newsss)
+                                                    props.onPrueba(newsss)
+
                                                 }
                                                 //store.getState().includes(newsss) === true ? setEstrella(faStar) : setEstrella(faStarHalfStroke)
                                                 //store.getState().includes(newsss) === true ? props.onDelete(newsss) : props.onAdd(newsss)

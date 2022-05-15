@@ -3,7 +3,7 @@ import axios from "axios"
 import NewsList from "../components/NewsList"
 import { createStore } from "redux"
 import newsReducer from "../reducer/reducer"
-
+import Favs from "../reducer/favs"
 const store = createStore(newsReducer)
 
 
@@ -21,6 +21,11 @@ function VerTodasNoticias (){
 
     const deleteNews_from_favorites = (newsss) => {
         store.dispatch({ type: 'DELETE', newsss })
+    }
+
+    //NUEVA FUNCIÓN NO REDUCER
+    const probando_funcion =(newsss)=>{
+        Favs(newsss,'ADD')
     }
 
     useEffect(()=>{
@@ -52,7 +57,7 @@ function VerTodasNoticias (){
     
         return (            
             <div className="App">                
-                <NewsList newssss={noticiasData} onAdd={addNews_to_favorites} onDelete={deleteNews_from_favorites} lista = {store}  />            
+                <NewsList onPrueba={probando_funcion} newssss={noticiasData} onAdd={addNews_to_favorites} onDelete={deleteNews_from_favorites} lista = {store}  />            
             </div>            
         )
 
