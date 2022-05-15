@@ -1,4 +1,5 @@
-import { Button, Popover, PopoverBody } from "react-bootstrap"
+import { Popover, PopoverBody } from "react-bootstrap"
+import Button from 'react-bootstrap/Button'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import styled from "styled-components";
 
@@ -13,6 +14,7 @@ function VistaFavoritos (props){
                             <div key={index}>
                                 <Contenedor>
                                     <Popover id="popover-basic">
+                                    
                                     <PopoverBody>
                                         <div>
                                             <h6>{newListElement.title} </h6>
@@ -27,7 +29,7 @@ function VistaFavoritos (props){
                 </ul>
 
             )}>
-            <Button variant="success">
+            <Button variant="success" size="lg">
                 Ver Noticias Favoritas
             </Button>
             </OverlayTrigger>

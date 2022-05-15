@@ -64,27 +64,28 @@ function NewsList (props) {
                                             onClick={() => {
                                                 
                                                 if(newsss.favorite === "1"){
-                                                    setEstrella(faStarHalfStroke)   
+                                                    setEstrella(faStarHalfStroke)
+                                                    alert(`FAVORITO ELIMINADO: ${newsss.title}`)   
                                                     //props.onDelete(newsss)
                                                     props.onPrueba(newsss)
+                                                    
                                                 }else{
                                                     setEstrella(faStar)
+                                                    alert(`NUEVO FAVORITO AGREGADO: ${newsss.title}`)
                                                     //props.onAdd(newsss)
                                                     props.onPrueba(newsss)
 
                                                 }
-                                                //store.getState().includes(newsss) === true ? setEstrella(faStar) : setEstrella(faStarHalfStroke)
-                                                //store.getState().includes(newsss) === true ? props.onDelete(newsss) : props.onAdd(newsss)
-                                                //props.onAdd(newsss)
-
-
+                                                window.location.reload()
+                                                
+                                            
                                             }} 
                                             icon={(store.getState()).includes(newsss) === true ? faStar : faStarHalfStroke}
                                             //icon={faStarHalfStroke}
                                             
                                             
                                             /></Col>
-
+                                        <div>________________________________________________________________</div>
                                         </Row>
                                         </Row>
                                         </Row>
