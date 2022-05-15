@@ -1,6 +1,6 @@
 import { faCircleDollarToSlot } from "@fortawesome/free-solid-svg-icons"
 import axios from "axios"
-import { useState} from "react"
+
 function Favs (dato,senal) {
     
     switch (senal) {

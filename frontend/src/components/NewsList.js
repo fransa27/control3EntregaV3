@@ -46,7 +46,8 @@ function NewsList (props) {
                                                                                     
                                             onClick={() => {
                                                  
-                                                if(store.getState().includes(newsss) === true){
+                                                if(newsss.favorite=="1"){
+                                                    //
                                                     setEstrella(faStarHalfStroke)   
                                                     //props.onDelete(newsss)
                                                     props.onPrueba(newsss)
