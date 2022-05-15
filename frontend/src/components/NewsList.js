@@ -69,22 +69,22 @@ function NewsList (props) {
                                                     alert(`FAVORITO ELIMINADO: ${newsss.title}`)   
                                                     //props.onDelete(newsss)
                                                     props.onPrueba(newsss)
-                                                    setMensaje("Agrega esta noticia a favorito")
+                                                    //setMensaje("Agrega esta noticia a favorito")
                                                     
                                                 }else{
                                                     setEstrella(faStar)
                                                     alert(`NUEVO FAVORITO AGREGADO: ${newsss.title}`)
                                                     //props.onAdd(newsss)
                                                     props.onPrueba(newsss)
-                                                    setMensaje("noticia en favorito")
+                                                    //setMensaje("noticia en favorito")
 
                                                 }
                                                 window.location.reload()
                                                 
                                             
                                             }} 
-                                            icon={(store.getState()).includes(newsss) === true ? faStar : faStarHalfStroke}
-                                            //icon={faStarHalfStroke}
+                                            /* icon={(store.getState()).includes(newsss) === true ? faStar : faStarHalfStroke} */
+                                            icon={faStar}
                                             
                                             
                                             /></Col>
