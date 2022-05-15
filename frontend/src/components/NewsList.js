@@ -1,17 +1,15 @@
 import {  Container, Row, Col, Button, Popover, PopoverBody } from "react-bootstrap"
-import { useState, useEffect } from "react"
+import { useState} from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faStar, faStarHalf} from '@fortawesome/free-solid-svg-icons';
+import {faStar} from '@fortawesome/free-solid-svg-icons';
 import {faStarHalfStroke} from '@fortawesome/free-regular-svg-icons';
-import VerNoticia from "../layout/VerNoticia";
+
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import styled from "styled-components";
 //import Popover from 'react-bootstrap/Popover'
 
 function NewsList (props) {
     var store=props.lista
-    var favorito=true
-    const [Estado, cambiarEstado] = useState(false);
     const [estrella, setEstrella] = useState(faStarHalfStroke)
     store.subscribe(() => {
         
@@ -110,19 +108,6 @@ function NewsList (props) {
 export default NewsList
 
 
-const Overlay = styled.div`
-    width:100vw;
-    heigth:100vh;
-    position:fixed;
-    top:0;
-    left:0;
-    background: rgba(0,0,0,.5);
-    padding: 40px;
-    display: flex;
-    alingn-items: center;
-    justify-content:center;
-
-`;
 const Contenedor = styled.div`
     width:500px;
     min-heigth:100px;
